@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block context %}
+ <h1 align="center">学生名单</h1><hr>
+    <table width=500px align="center">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>城市</th>
+        <th>生日</th>
+        <th>花名</th>
+        <th>零钱</th>
+    </tr>
+    {% for member in stu %}
+       <tr>
+         <td>{{ member.id }}</td>
+         <td>{{ member.name }}</td>
+         <td>{{ member.gender }}</td>
+         <td>{{ member.city }}</td>
+         <td>{{ member.birthday }}</td>
+         <td>{{ member.bio }}</td>
+         <td>{{ member.money }}</td>
+       </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+
+{% block project %}
+<h1 align="center">零钱土豪榜</h1><hr>
+    <table width=200px align="center">
+    <tr>
+        <th>姓名</th>
+        <th>城市</th>
+        <th>零钱</th>
+    </tr>
+    {% for happy in top3 %}
+       <tr>
+         <td>{{ happy.name }}</td>
+         <td>{{ happy.city }}</td>
+         <td>{{ happy.money }}</td>
+       </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

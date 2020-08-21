@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基模板</title>
+    <style>
+        body {
+            margin: auto;
+            padding: 0;
+        }
+        table {
+            border:3px solid blue;
+	        border-collapse:collapse;
+        }
+        tr {
+            border:2px dotted red;
+        }
+        form {
+            border: 1px solid black;
+        }
+        .topbar {
+            background: lightgray;
+            width: 1000px;
+            height: 100px;
+        }
+        .leftbar {
+            background: orchid;
+            width: 25px;
+            height: 600px;
+            float: left;
+        }
+        .project {
+            background: khaki;
+            width:200px;
+            height: 600px;
+            float: left;
+        }
+        .context {
+            background: azure;
+            width:750px;
+            height: 600px;
+            float: left;
+        }
+        .rightbar {
+            background: orchid;
+            width: 25px;
+            height: 600px;
+            float: left;
+        }
+        .bottom {
+            background: lightgray;
+            width: 1000px;
+            height: 20px;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topbar">
+{#        导航栏#}
+    </div>
+    <div class="leftbar">
+    </div>
+    <div class="project">
+{#         项目区#}
+        {% block project %}{% endblock %}
+    </div>
+    <div class="context">
+{#        子模块显示在内容区#}
+    {% block context %}{% endblock %}
+    </div>
+    <div class="rightbar">
+    </div>
+    <div class="bottom">
+    </div>
+
+</body>
+</html>
